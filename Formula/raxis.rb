@@ -5,54 +5,59 @@
 class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
-  version  "0.1.0"
+  version  "0.1.1"
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.1.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3e2cb10509035056ee8ecf683eaec14e9cbdb3aec54805c2e181c2db087dac6a"
-    sha256 cellar: :any_skip_relocation, tahoe:          "09f9a8b08b2625f46f9461e52eeaa97c0669f5b069c0e1d772ce2b7a3f97317e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "28d28284f52523899b147309f41971091f03b9f6a7cf9010892a7c5a9ae083d5"
-    sha256 cellar: :any_skip_relocation, sequoia:        "55ba2c41e683f400afb54537bd4eef9fb3cbcd0a3517774270cf43055c0aaac7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf792b7a62357b4a453caa025aaf45c889af1d9c3a82efea0bea99eb82234dc9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dbc7aba4f3af4d827c749b38b8dc1b4ef0a2dcee69c1a0c819c4af8e90864783"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b0bdc8b85304eb3d7c995a710d96525503561362f58212155b34ee59e08ad43e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50a9c62897d1efbdaa7952956e83052caa9f360b9771d707585393529928c138"
+    root_url "https://github.com/chika5105/raxis/releases/download/v0.1.1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "12c16025795e3a617f6816d3f90c7cdb5602062860b25b762dadbe7e51cfcfdb"
+    sha256 cellar: :any_skip_relocation, tahoe:          "cd88bea7b05c41043fbdbf87ff44b26d12f571936bfedb2f1d4ddc816cc6f4bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "18e2642400764da85ac8a15ab45968890300690156f13e4c28af7cf2a223b692"
+    sha256 cellar: :any_skip_relocation, sequoia:        "d03f75f727b5c9195b9fcac626ea090630185453d2082a99f1bb5d9affaa6ac0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5c523447c97266b256e876ed6db932ab9cff72bd5f615289059183fa197a2db"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6eeabfe91b613adeb6325883d35037aeb950f153bac345b52f6081fb66cfff8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a1aea7262248092ce88021474b47129addaa2c35969c609fa716d1cfa2b6f87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c83d902804500ef2d0b19b56495e3ef2695684e76e0a9a29391cfe12d512d88c"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.0/raxis-v0.1.0-darwin-arm64.tar.gz"
-      sha256 "ec61da18ae50eff7909cc857264f1531c725e341fbdf7167c06deeef93eb2b30"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.1/raxis-v0.1.1-darwin-arm64.tar.gz"
+      sha256 "32383cdb6f51b2458443140411fc7962af1c59f391743b104026bc3a82c00c4a"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.0/raxis-v0.1.0-darwin-x86_64.tar.gz"
-      sha256 "e538f0dcc7be6e55d4beb751eccf1bbd8ba74c4b364795fa1e63ec737d597d1b"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.1/raxis-v0.1.1-darwin-x86_64.tar.gz"
+      sha256 "943e73bb81c9d5390386d53db8e8403ecc96b3e9a985d0b97ca1f69f1ab72e62"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.0/raxis-v0.1.0-linux-arm64.tar.gz"
-      sha256 "0ea78433c596ad5237d1ea455f32459e5dfe8e5785cca9aa7fa0f7e150487276"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.1/raxis-v0.1.1-linux-arm64.tar.gz"
+      sha256 "76d9975e5702ff8b7c68caebe6d6bb2026223795543b398607e211211146ac0d"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.0/raxis-v0.1.0-linux-x86_64.tar.gz"
-      sha256 "c2a696658c1f1aaef25fd1f4daa0229e3bfcbc798f3a3321303200b1173e9e4a"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.1/raxis-v0.1.1-linux-x86_64.tar.gz"
+      sha256 "2252417bb83ce05934ca1ce6a9e03c5fe01af3f350bde4910bf507ad59115712"
     end
   end
 
   def install
-    bin.install "bin/raxis-kernel"
-    bin.install "bin/raxis-cli"
-    bin.install "bin/raxis"
-    bin.install "bin/raxis-gateway"
-    bin.install "bin/raxis-otel-pusher"
-    bin.install "bin/raxis-supervisor"
-    bin.install "bin/raxis-orchestrator"
-    bin.install "bin/raxis-executor"
-    bin.install "bin/raxis-reviewer"
-    bin.install "bin/raxis-tproxy"
+    %w[
+      raxis-kernel
+      raxis-cli
+      raxis
+      raxis-gateway
+      raxis-otel-pusher
+      raxis-supervisor
+      raxis-orchestrator
+      raxis-executor
+      raxis-reviewer
+      raxis-tproxy
+    ].each do |cmd|
+      bin.install "bin/#{cmd}"
+      chmod 0755, bin/cmd
+    end
 
     pkgshare.install "images" if File.directory?("images")
     pkgshare.install "kernel" if File.directory?("kernel")
