@@ -5,40 +5,40 @@
 class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
-  version  "0.1.2"
+  version  "0.1.3"
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.1.2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "8cec112ada4574c7917c86c6e84cef4488eced97a55449130c268b1a77bf25b2"
-    sha256 cellar: :any_skip_relocation, tahoe:          "d20f76e5c2018c920d0e8deabb308e55d61129cb6e9d1a93d4ae9bc483743b23"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "523153bf7d85178e689dc0fa97671ab796e313d6a443f413e1d936b3c26504ef"
-    sha256 cellar: :any_skip_relocation, sequoia:        "48ee17af04cc2d48d58f085cfbe0766caf2b3e0f3826cb4fb1e5b4bfc14c21d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a860f1806181fe78c5e55b0f74b65ff4a2dbb7dbbb941e4255a805686a9c14c3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ca2c1246510330f93954e073ad564911d8c689c46b1efe37d1000e9c5814f204"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3131b43e0d59cc98974d1841370cbec7bb9983200eac55a8dc58525c78033236"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e77a9fba442191588861b62c727fb1cf244a7d89d21a78a0e0c80ef0d10169b"
+    root_url "https://github.com/chika5105/raxis/releases/download/v0.1.3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1d1b0a81a04b02ac289b28d6a1b7818d0e6911cbcf38c4d91f0e6107dc593fd4"
+    sha256 cellar: :any_skip_relocation, tahoe:          "e9c28cdebc4d9589677a92e309bef28573c1efff85bec4dc11fdba6ac2340031"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "48f3ca39eef9f94038217ceda884185a477ea63006b1be3bc4c853c3fa4d8db1"
+    sha256 cellar: :any_skip_relocation, sequoia:        "668ee5289d96da80130ca042cf112f8c43d873920a58d59906a080ab46364e42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e92ca3e15b8c8f41cf54602f1b259a055feb0754ce58522fdbed4ec4cf65ef7c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "40d85101c0c55438849763fcb2deed1e9eb30c41a0831869ee1164d1619770bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9220249dc4e8e2e3fa66e0ccc371718aa5e529370114435dc85ee21c169c9c63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d2b90dcc4b5522955d6539bf67d162eb0c76c591aaa67e1d25f2f7975624bde"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.2/raxis-v0.1.2-darwin-arm64.tar.gz"
-      sha256 "e72b168550d5bf0abe15dbd5b0e569b45325139795d659f2122abdb8a3ad62c3"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-darwin-arm64.tar.gz"
+      sha256 "fca2a593543a0c3ede661bbbc8901b376e5773066dec893e5bf16a9ed2a237dd"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.2/raxis-v0.1.2-darwin-x86_64.tar.gz"
-      sha256 "c2507a181412a140566c868c282605f6218bafbf83592a0964b2f221b10ec60c"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-darwin-x86_64.tar.gz"
+      sha256 "5a13d3126692f608c423a3d625e164739830512eaf2e2795b09eaa42a730a78c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.2/raxis-v0.1.2-linux-arm64.tar.gz"
-      sha256 "7dff16000253e36b496fe73e8495f9313a5422188cdc05c04ae4d2f4afb21631"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-linux-arm64.tar.gz"
+      sha256 "db16b93460a22cbdc8ec9535bf7951031b522522cda5475a8aa912d27cdc9231"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.2/raxis-v0.1.2-linux-x86_64.tar.gz"
-      sha256 "66d939e351d2093970c48581c435babb686108dd8496c742416abd16e0a240d9"
+      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-linux-x86_64.tar.gz"
+      sha256 "eaad5654ce9427ecc0fb423d4e08a6d90b01b7d4e84523a414207b140e1a090b"
     end
   end
 
@@ -77,9 +77,10 @@ class Raxis < Formula
   end
 
   service do
-    run [opt_bin/"raxis-supervisor", "start"]
+    run ["/bin/sh", "-c", "ulimit -n 4096 && exec #{opt_bin}/raxis-supervisor start"]
     keep_alive true
-    environment_variables RAXIS_INSTALL_DIR: opt_pkgshare.to_s,
+    environment_variables PATH: std_service_path_env,
+                          RAXIS_INSTALL_DIR: opt_pkgshare.to_s,
                           RAXIS_DATA_DIR: (var/"lib/raxis").to_s,
                           RAXIS_SUPERVISOR_AUTO_RESTART: "1",
                           RAXIS_SUPERVISOR_KERNEL_BINARY: (opt_bin/"raxis-kernel").to_s
@@ -109,6 +110,8 @@ class Raxis < Formula
 
       The service launches raxis-supervisor, which launches and
       supervises raxis-kernel.
+      It raises the launchd file-descriptor soft limit to 4096 before
+      starting the kernel.
 
       Dashboard static bundle:
         #{opt_pkgshare}/dashboard
@@ -118,6 +121,14 @@ class Raxis < Formula
 
       Start the kernel with:
         brew services start raxis
+
+      Check daemon health with:
+        RAXIS_DATA_DIR=#{var}/lib/raxis raxis-supervisor status
+        RAXIS_DATA_DIR=#{var}/lib/raxis raxis doctor
+
+      Logs:
+        #{var}/log/raxis/kernel.log
+        #{var}/log/raxis/kernel.err.log
 
       Operator policy example:
         #{etc}/raxis/policy.toml.example
