@@ -5,40 +5,40 @@
 class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
-  version  "0.1.3"
+  version  "0.2.0"
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.1.3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1d1b0a81a04b02ac289b28d6a1b7818d0e6911cbcf38c4d91f0e6107dc593fd4"
-    sha256 cellar: :any_skip_relocation, tahoe:          "e9c28cdebc4d9589677a92e309bef28573c1efff85bec4dc11fdba6ac2340031"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "48f3ca39eef9f94038217ceda884185a477ea63006b1be3bc4c853c3fa4d8db1"
-    sha256 cellar: :any_skip_relocation, sequoia:        "668ee5289d96da80130ca042cf112f8c43d873920a58d59906a080ab46364e42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e92ca3e15b8c8f41cf54602f1b259a055feb0754ce58522fdbed4ec4cf65ef7c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40d85101c0c55438849763fcb2deed1e9eb30c41a0831869ee1164d1619770bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9220249dc4e8e2e3fa66e0ccc371718aa5e529370114435dc85ee21c169c9c63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d2b90dcc4b5522955d6539bf67d162eb0c76c591aaa67e1d25f2f7975624bde"
+    root_url "https://github.com/chika5105/raxis/releases/download/v0.2.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "dbc3b7436ec20a4fc43f66f15e6e5534dd59cb3ab8a559c99943f42a3dd45499"
+    sha256 cellar: :any_skip_relocation, tahoe:          "80da2731e52f962d88f1fd3643311ba004fdfc3292739d2abc9c79cf2a90edff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01ce1eb272cc5aa847307e64e1c2520c8440f06fdf193913f80036b3b086920a"
+    sha256 cellar: :any_skip_relocation, sequoia:        "99e00052c338d10ec687783d6ce8d949f651d483ec46462ae98c91154feb2f89"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2f08ec079a2e20dc47623cbb253ed8f66ce821129f5c37e9207edc5f2fe2cdc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46b21e482069d79ef83686bd32a699fb68df8a87816f5d135c0781899166f9ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9706616cfffc086cc3d83d2b78d688103fbd5040a5d30a6ecc290f1b1f3060f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2d8a35bdbad66476cfbebb73d525ca40cbae5413615da3cd2490f3feb13922c"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-darwin-arm64.tar.gz"
-      sha256 "fca2a593543a0c3ede661bbbc8901b376e5773066dec893e5bf16a9ed2a237dd"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.0/raxis-v0.2.0-darwin-arm64.tar.gz"
+      sha256 "94bcc855966c3f55944feeb19808afdb857ad3f66669abd075800355a50835e8"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-darwin-x86_64.tar.gz"
-      sha256 "5a13d3126692f608c423a3d625e164739830512eaf2e2795b09eaa42a730a78c"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.0/raxis-v0.2.0-darwin-x86_64.tar.gz"
+      sha256 "92dde8cc954564145d56576aec18d1d1fb7c24d3dee162cf577ded6efb98dfa5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-linux-arm64.tar.gz"
-      sha256 "db16b93460a22cbdc8ec9535bf7951031b522522cda5475a8aa912d27cdc9231"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.0/raxis-v0.2.0-linux-arm64.tar.gz"
+      sha256 "259f5e768a103952c932bf3350debac48cbe68789b88527548d8d1b964c32716"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.1.3/raxis-v0.1.3-linux-x86_64.tar.gz"
-      sha256 "eaad5654ce9427ecc0fb423d4e08a6d90b01b7d4e84523a414207b140e1a090b"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.0/raxis-v0.2.0-linux-x86_64.tar.gz"
+      sha256 "105cd052bd0b86ae5b74c9a4fc35ac2c6fae07ee7aa49b1cdd7a42e1fde122c5"
     end
   end
 
@@ -61,6 +61,8 @@ class Raxis < Formula
 
     pkgshare.install "images" if File.directory?("images")
     pkgshare.install "kernel" if File.directory?("kernel")
+    pkgshare.install "share/raxis/install.sh" if File.exist?("share/raxis/install.sh")
+    chmod 0755, pkgshare/"install.sh" if (pkgshare/"install.sh").exist?
     pkgshare.install "share/raxis/dashboard" if File.directory?("share/raxis/dashboard")
     pkgshare.install "share/raxis/policy.toml.example" if File.exist?("share/raxis/policy.toml.example")
 
@@ -83,6 +85,7 @@ class Raxis < Formula
                           RAXIS_INSTALL_DIR: opt_pkgshare.to_s,
                           RAXIS_DATA_DIR: (var/"lib/raxis").to_s,
                           RAXIS_SUPERVISOR_AUTO_RESTART: "1",
+                          RAXIS_SUPERVISOR_REQUIRE_INITIALIZED_DATA_DIR: "1",
                           RAXIS_SUPERVISOR_KERNEL_BINARY: (opt_bin/"raxis-kernel").to_s
     log_path var/"log/raxis/kernel.log"
     error_log_path var/"log/raxis/kernel.err.log"
@@ -107,11 +110,15 @@ class Raxis < Formula
         RAXIS_INSTALL_DIR=#{opt_pkgshare}
         RAXIS_DATA_DIR=#{var}/lib/raxis
         RAXIS_SUPERVISOR_AUTO_RESTART=1
+        RAXIS_SUPERVISOR_REQUIRE_INITIALIZED_DATA_DIR=1
 
       The service launches raxis-supervisor, which launches and
       supervises raxis-kernel.
       It raises the launchd file-descriptor soft limit to 4096 before
       starting the kernel.
+
+      Fast setup:
+        #{opt_pkgshare}/install.sh
 
       Dashboard static bundle:
         #{opt_pkgshare}/dashboard
