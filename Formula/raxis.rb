@@ -5,40 +5,41 @@
 class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
-  version  "0.2.4"
+  version  "0.2.5"
+
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.2.4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "df17ca3d47b4efbe64978548d5f1cd16ce877f80e2ed962e62232d1c82cd95df"
-    sha256 cellar: :any_skip_relocation, tahoe:          "b5c1fff71590a4304b54aefbfb2187165af49992e9ec7e7d9f9768fd3127affa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9155bd885f02c1219746636fa8d58163bf58c2e80d606abd4d4206846b1c1bca"
-    sha256 cellar: :any_skip_relocation, sequoia:        "d5453012215ee76344028ae5dc5d262e89a3afaf0598b52b3303e941191ddd2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afe02aef21532639aeed66177cedef381ab90595be8811f6e7dc49ad6ae1be56"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d3e4f2055ddf770c33f947aaabb16e809904a0a1aa6984f269148899efefee6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4c9ee74708d7e8f55ba04504788daacba424cc6df555314989660724d9357b1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9797819d496d655349b406c37604535f6d7808e9f35926ed8cc89f0a4e78553"
+    root_url "https://github.com/chika5105/raxis/releases/download/v0.2.5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ec2a3486ec24a4be4088af4a214fb51e3a2bb8f739c1e59b6f9e627698db43fc"
+    sha256 cellar: :any_skip_relocation, tahoe:          "2e89d1b892cf541f3846ac623071701fbdccef357a91c336fdd1469b63fd187f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "014d8e4dea6d60c58213030128aa59b9e8d29bf2549571739bc3ec0cd835b8ab"
+    sha256 cellar: :any_skip_relocation, sequoia:        "5aa17f39c7fd6d77611de762f920e01994b4c095fb10b3a0b9ab7392fbfdf117"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "493222bac2a253fd839c90e65e7cccda37c561b2bb9cd256664c6185eac9bff9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4fc9f1c31818d724c00f5d72117a3c8bdd65cc0a9cca20ba4f241ab65a0e336"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a279bbc52a9e8f50b4c83838ffc05e95f44a6f438b5a99a8a0f2b6123c5ddf32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eabd692db0237b98ec127c7d5cdbc8559c0a68a234e983bc4f615c55f777dcdc"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.4/raxis-v0.2.4-darwin-arm64.tar.gz"
-      sha256 "6757a5e9f6f7fc2894e5a65cbe1cb64dcd19dd1efe57b0244c1666a440cf83ef"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-darwin-arm64.tar.gz"
+      sha256 "c726e1586994fdd4162a6f6cc1eb488958cb4db1a21f7abea465a75a0c4d6fdb"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.4/raxis-v0.2.4-darwin-x86_64.tar.gz"
-      sha256 "75b2413de6a11ae6b091dd9ca9612a7370e127a726c09bb1490676bc672daedc"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-darwin-x86_64.tar.gz"
+      sha256 "fb8843f5ada8f9d0f020f39dbd38436d50360b858d5d3ed4b8ae0af405a2b2ea"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.4/raxis-v0.2.4-linux-arm64.tar.gz"
-      sha256 "038e7cbe437024e34308182e269c02652daf8f053f975898d7750b5b03485dee"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-linux-arm64.tar.gz"
+      sha256 "1d2b4ea91edfae7a70d3756232ea4bcae94d8085fde5166a52e1278952739cf3"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.4/raxis-v0.2.4-linux-x86_64.tar.gz"
-      sha256 "f127fa55ddf570a23552c01df7a73b8727df0a55245b42173a2782b415bfb134"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-linux-x86_64.tar.gz"
+      sha256 "83040822bac4fcf7a560dbd34898c3be5485ca717730034b10bb85b4bf450bf6"
     end
   end
 
@@ -127,6 +128,10 @@ class Raxis < Formula
       To serve it, configure policy.toml with:
         [dashboard]
         static_dir = "#{opt_pkgshare}/dashboard"
+      A verified local dashboard-only patch can be installed with:
+        raxis dashboard install-bundle --from-file <bundle.tar.gz> --sha256 <hex>
+      It is stored under #{var}/lib/raxis/dashboard/current and is
+      preferred by new kernel starts over the packaged bundle.
 
       Start the kernel with:
         brew services start raxis
