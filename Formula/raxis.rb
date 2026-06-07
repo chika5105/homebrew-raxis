@@ -5,41 +5,41 @@
 class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
-  version  "0.2.5"
+  version  "0.2.6"
 
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.2.5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ec2a3486ec24a4be4088af4a214fb51e3a2bb8f739c1e59b6f9e627698db43fc"
-    sha256 cellar: :any_skip_relocation, tahoe:          "2e89d1b892cf541f3846ac623071701fbdccef357a91c336fdd1469b63fd187f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "014d8e4dea6d60c58213030128aa59b9e8d29bf2549571739bc3ec0cd835b8ab"
-    sha256 cellar: :any_skip_relocation, sequoia:        "5aa17f39c7fd6d77611de762f920e01994b4c095fb10b3a0b9ab7392fbfdf117"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "493222bac2a253fd839c90e65e7cccda37c561b2bb9cd256664c6185eac9bff9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4fc9f1c31818d724c00f5d72117a3c8bdd65cc0a9cca20ba4f241ab65a0e336"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a279bbc52a9e8f50b4c83838ffc05e95f44a6f438b5a99a8a0f2b6123c5ddf32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eabd692db0237b98ec127c7d5cdbc8559c0a68a234e983bc4f615c55f777dcdc"
+    root_url "https://github.com/chika5105/raxis/releases/download/v0.2.6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b8839a6eb3124f73c34e9a1e3d2490094208bd83def3f4fad5c1c361c1fd3e56"
+    sha256 cellar: :any_skip_relocation, tahoe:          "e9ea140dfa1e1c9810efa32a57ffff21164d49757b57ad09c8c979f8e0849e2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c8e6d6ef2fe2aec8190530f49b2e5e75091cf17f8af8c97d9c778c7d9ef60b3f"
+    sha256 cellar: :any_skip_relocation, sequoia:        "ca1181dde6523da8239fecb0ba382fc73d62a578363a4419e6369ad0d696603f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85f0522ac2c98749c92c39d39065cff2b556e2248a540629bb3a3c2d6b59c426"
+    sha256 cellar: :any_skip_relocation, sonoma:         "13f4ddb34f2f804f16bcca55648a5b8d885288fb7c7e2be18e3febbda2117873"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9ef552b14cc8014a7f1da5aae5f47de45c44e63fd3d8fff441478a0438f29c2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "868baf61e11037f612d37663c750db71afe5c6786d4bfd8bfde6a1926b79900d"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-darwin-arm64.tar.gz"
-      sha256 "c726e1586994fdd4162a6f6cc1eb488958cb4db1a21f7abea465a75a0c4d6fdb"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.6/raxis-v0.2.6-darwin-arm64.tar.gz"
+      sha256 "4f1c2cf53695b57a37375718857edf8835d186f30e01c963ab034b114a0fb49e"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-darwin-x86_64.tar.gz"
-      sha256 "fb8843f5ada8f9d0f020f39dbd38436d50360b858d5d3ed4b8ae0af405a2b2ea"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.6/raxis-v0.2.6-darwin-x86_64.tar.gz"
+      sha256 "94f8e774e89fc7455a3c2279e80fc5989d438d7d1ac7be0d762938bccbb83681"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-linux-arm64.tar.gz"
-      sha256 "1d2b4ea91edfae7a70d3756232ea4bcae94d8085fde5166a52e1278952739cf3"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.6/raxis-v0.2.6-linux-arm64.tar.gz"
+      sha256 "c8cd0d5832f1b77287d25631e28ada47dbe414400c414f9d6e7546cfea4ea33f"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.2.5/raxis-v0.2.5-linux-x86_64.tar.gz"
-      sha256 "83040822bac4fcf7a560dbd34898c3be5485ca717730034b10bb85b4bf450bf6"
+      url "https://github.com/chika5105/raxis/releases/download/v0.2.6/raxis-v0.2.6-linux-x86_64.tar.gz"
+      sha256 "378444102c39a4c62e68646605a1a8f0a4e5bb26b112fc206dd135671243fd68"
     end
   end
 
