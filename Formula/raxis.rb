@@ -6,19 +6,19 @@ class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
   version  "0.2.6"
-  revision 2
+  revision 3
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/dashboard-v0.2.6-r2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ed1050c0bc2fce75ab026c31dc1e112380514eb6a73c3a7c67afcf4b7c84166b"
-    sha256 cellar: :any_skip_relocation, tahoe:          "07f0bbd2ce61f21269b2ab7e4a73b46e5047abac5d3375d3463f3a596c9b2148"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b1e3e4bb7c9fc46719c48a23cfe14d80f8e4c6daa7b5cd9068c0ea6e8d3671f1"
-    sha256 cellar: :any_skip_relocation, sequoia:        "a89b9cd005813285e5506eea29212e4a59bbf5650a88ae8fe4c612cbbfd63ca8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff346212aeec3de3c9f4e0e66e85336752e107c699201140796c5f7a752a6e20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "acd0b2b67b6267665eb1e0a1cb6738c5c682402bc2e3af934de8aecaac618e52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b190c7a614bf80c242d10f874eb8ce61553226a7442afeea2edd9c7bac65d7a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "905cda3d094f3387eff4aeab2dfcd7ea76db5ec9f9f26751be9f244400435335"
+    root_url "https://github.com/chika5105/raxis/releases/download/dashboard-v0.2.6-r3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3e8bf1c1e111aa00cf93523eb74d62a447f11af1e4ef172651d4f9d8511982ae"
+    sha256 cellar: :any_skip_relocation, tahoe:          "d769933c39be1d05c8ed22505a6f0152f4ea92211fe8de966426b2100c604e27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "93a966fec4067fd22c4777435a8ac372aa801ecd278c1a444c175ddd9eb20c9d"
+    sha256 cellar: :any_skip_relocation, sequoia:        "5348c8d1330d46ad43b31fc10a5def739a6ac67c4f600b1cb869e398452f42e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d9bf1dfdfbe501d04da6fac69f8b09983f83a211e5371a377899436df207540"
+    sha256 cellar: :any_skip_relocation, sonoma:         "28ff582ec5709590d4a0a4f5be8e292ac4ff282eae07930db753bd848fd191ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "daa7d8daea467c84b4699edd0c3871da4b72c82b20c0f3f0a250808f343ab390"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ee3ec57ed76fe51afe8a7dfc8c8f88749ea2f58745215d32a713d22e3296ff3"
   end
 
   on_macos do
