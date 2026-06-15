@@ -2,44 +2,46 @@
 # by .github/workflows/release.yml. Do NOT hand-edit the rendered
 # formula in the tap repository; the next release overwrites it.
 
+require "json"
+
 class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
-  version  "0.3.0"
+  version  "0.3.1"
 
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.3.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "8c8b463fd649a2c48df90cba07eba4fd768953691e253c356df96ec19fbbe83c"
-    sha256 cellar: :any_skip_relocation, tahoe:          "6e9e727a8e132adf38c413eec52aabbcc83bf973608ebc452ea9e74d5e34d35d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9cb346c24d4d0dad39ea58031eca5438617aff35feee9bb1cbabcc323515a610"
-    sha256 cellar: :any_skip_relocation, sequoia:        "5904d1d551a0d174ceff20d772d485ead0c3971a7921c6d3d8d56190d6f7aedf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54b6ee2c5cc20b75da7dde0af405cfd5cf28899bdc6ff9fe3cf1ab38197c8c1d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "69b885011a70a72354ed491eae2e959c0fe7ac0d886cbe059f8005fb1da20a3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "01abbf6f77d2aa6ad3e987706ed9ef9391cf54ad840afc35a332474f914a03fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af46f5b6d532fbbc7563caa0ee6f9648f428b055091855a89a7fbfacc2e82d05"
+    root_url "https://github.com/chika5105/raxis/releases/download/v0.3.1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a41ce5418b2a9fba5f6e7f38cebe86ab8b7cc1de9faa6c3a3bef285f8fe96d04"
+    sha256 cellar: :any_skip_relocation, tahoe:          "1c08af8707897b350a4cb9bdcc08d6faa6e25baac9d8221a1abc936d01f81957"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3892b21531a7b1132c3e6422d90d51aa926d63789bdccc24e492d07521b386f9"
+    sha256 cellar: :any_skip_relocation, sequoia:        "32971ee4f7339b35d3c9f9e390948db6c5af794a5ce4a8ca6f1edc63ca5f2e79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19838218b61c0292c068e4909caa1f6238a12f751ebd86f132657f7bc84001a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "23b954c163ebf6408da3fb14dbbff9269a55f19da94eb511a0e2eccc484b82ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6a737aa11eaafa4e08fc2414463020ce930d36335a014f247ac7e9897a74799d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "250f95afd692c63fc07586b93ade6a7ae1c3e5dfc367d3b334913e81e9cfe43a"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.3.0/raxis-v0.3.0-darwin-arm64.tar.gz"
-      sha256 "c2fd41b05e2370b3f28380f2f9ffc0f95c16edaeefea5ec420d34d312d41114c"
+      url "https://github.com/chika5105/raxis/releases/download/v0.3.1/raxis-v0.3.1-darwin-arm64.tar.gz"
+      sha256 "cba58c51bf3d26afc405ae480c13794ceba32df18ad1ea4fe2489667eabe18c9"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.3.0/raxis-v0.3.0-darwin-x86_64.tar.gz"
-      sha256 "5a90005c812dcc1eed38d97a95733b6079afd1a0c2513d108df6ded970ad7c96"
+      url "https://github.com/chika5105/raxis/releases/download/v0.3.1/raxis-v0.3.1-darwin-x86_64.tar.gz"
+      sha256 "01b8dcea44e58349df784274e88fc52809996827f2f6997e11f1235a0fbde0d7"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chika5105/raxis/releases/download/v0.3.0/raxis-v0.3.0-linux-arm64.tar.gz"
-      sha256 "ca5636e5fae4f766fc8d47079887393e1029f86e93eabdb55ed5ea61918f12f4"
+      url "https://github.com/chika5105/raxis/releases/download/v0.3.1/raxis-v0.3.1-linux-arm64.tar.gz"
+      sha256 "07e68e79b4c2c7fd29c3a0970a2f9c8b1bc3b9d58f316b580e5053b7ac769220"
     end
     on_intel do
-      url "https://github.com/chika5105/raxis/releases/download/v0.3.0/raxis-v0.3.0-linux-x86_64.tar.gz"
-      sha256 "57e69b5eb305f9b1a6950239ffcb9546de0fdabcf5b0472bf79b0c0696bf1d2b"
+      url "https://github.com/chika5105/raxis/releases/download/v0.3.1/raxis-v0.3.1-linux-x86_64.tar.gz"
+      sha256 "2ecb8ea7ec729d26f092ab8b07363f4bf180f4f8df5d2c4280aefa63c98a41ff"
     end
   end
 
@@ -86,7 +88,7 @@ class Raxis < Formula
       (etc/"raxis/disable-brew-auto-restart").exist?
   end
 
-  def raxis_homebrew_service_active?
+  def raxis_homebrew_service_active_from_list?
     brew = HOMEBREW_PREFIX/"bin/brew"
     services = IO.popen([brew.to_s, "services", "list"], err: File::NULL, &:read)
     services.lines.any? do |line|
@@ -97,16 +99,30 @@ class Raxis < Formula
     false
   end
 
+  def raxis_homebrew_service_managed?
+    brew = HOMEBREW_PREFIX/"bin/brew"
+    services = IO.popen([brew.to_s, "services", "info", "raxis", "--json"], err: File::NULL, &:read)
+    JSON.parse(services).any? do |entry|
+      entry["name"] == "raxis" && (
+        entry["registered"] ||
+        entry["loaded"] ||
+        %w[started error].include?(entry["status"].to_s)
+      )
+    end
+  rescue
+    raxis_homebrew_service_active_from_list?
+  end
+
   def raxis_restart_homebrew_service_after_upgrade
-    return unless raxis_homebrew_service_active?
+    return unless raxis_homebrew_service_managed?
 
     if raxis_homebrew_auto_restart_disabled?
-      opoo "RAXIS Homebrew service is active but automatic restart is disabled."
+      opoo "RAXIS Homebrew service is managed but automatic restart is disabled."
       opoo "Run `brew services restart raxis` when you want the service to use this upgrade."
       return
     end
 
-    ohai "Restarting active RAXIS Homebrew service so it uses this upgrade"
+    ohai "Restarting managed RAXIS Homebrew service so it uses this upgrade"
     system (HOMEBREW_PREFIX/"bin/brew").to_s, "services", "restart", "raxis"
   end
 
@@ -168,9 +184,10 @@ class Raxis < Formula
       Start the kernel with:
         brew services start raxis
 
-      When `brew upgrade raxis` replaces this formula, an active RAXIS
-      Homebrew service is restarted automatically so launchd/systemd stops
-      using the old Cellar path. Stopped services are left stopped.
+      When `brew upgrade raxis` replaces this formula, a Homebrew-managed
+      RAXIS service is restarted automatically so launchd/systemd stops
+      using the old Cellar path. Fresh installs and never-enabled services
+      are left stopped.
       Disable one automatic upgrade restart with:
         RAXIS_BREW_AUTO_RESTART=0 brew upgrade raxis
       Disable it persistently with:
