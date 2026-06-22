@@ -8,19 +8,19 @@ class Raxis < Formula
   desc     "Runtime Attestation eXchange for Intelligent Systems"
   homepage "https://raxis.io"
   version  "0.3.3"
-
+  revision 1
   license  "SSPL-1.0"
 
   bottle do
-    root_url "https://github.com/chika5105/raxis/releases/download/v0.3.3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5d5de0510d2983efa6318cff338dd1cb3688bfa5bfc2ec825828d5a49b753e5f"
-    sha256 cellar: :any_skip_relocation, tahoe:          "eee458aca9b870df367ae34494673a3aabfb359f38e4679b66cd027b731d83b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "218ba0848e55e4e4e19671ee90de967ecc8cb9e98557d4dfd06f26ecd8a86863"
-    sha256 cellar: :any_skip_relocation, sequoia:        "a9dcd42233b3550c3f084a6a892a9185933ecdcb1d56b4e0506b37335afda2f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f59680bce8625e527c774d3ab8d91556ff01e2a54546d25cb0b1dda57880921"
-    sha256 cellar: :any_skip_relocation, sonoma:         "16f62b7d7c50858d1f21fc91ff9d92fbb6a61d8671f53eaa83edda3b695deacc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "f2ce29628b8ee0a08010571f8805d68106b0f6571d42b721f120d40403c4edc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c58cbd9b6d1a461d51038d778211c7e6585542ba2c740ca03b3c49d20b6a3853"
+    root_url "https://github.com/chika5105/raxis/releases/download/dashboard-v0.3.3-r1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "f453c6db7e52e079886a5f078aba69f1cde4a05d4f7d8255daaad12fd0fe2bac"
+    sha256 cellar: :any_skip_relocation, tahoe:          "bbee5edb66bfccfbdbc05cba601437993e2f51ef6673476cc9eb9fe82fc85758"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ccff6c27ce91be9297bedd0716dfa8964781b4a9d335ae1124bc98a6a3c1416f"
+    sha256 cellar: :any_skip_relocation, sequoia:        "6d25abfdfd1f21ca60579d7e0ca31df5dd7838430cebfc8017f478b527736a48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd4bbf26e349a622d46a5c02a8038aa631b80ff58dc0038148922a15439e3b49"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6d4f2b6142c583d394da66a891c1b1f1aedd996a27a213aec7637d103f0b3302"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "598d981374461ef59eb101980315947da2ab36836a20dbdb9388f1bf71c6aa96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd5fcd2b2545d835922733e7fc73282672952845c79d624638472bb9467d11cd"
   end
 
   on_macos do
@@ -158,15 +158,15 @@ class Raxis < Formula
   end
 
   service do
-    run [bin/"raxis-supervisor", "start"]
+    run [opt_bin/"raxis-supervisor", "start"]
     keep_alive true
     environment_variables PATH: std_service_path_env,
-                          RAXIS_INSTALL_DIR: pkgshare.to_s,
+                          RAXIS_INSTALL_DIR: opt_pkgshare.to_s,
                           RAXIS_DATA_DIR: (var/"lib/raxis").to_s,
                           RAXIS_ENV: "default",
                           RAXIS_SUPERVISOR_AUTO_RESTART: "1",
                           RAXIS_SUPERVISOR_REQUIRE_INITIALIZED_DATA_DIR: "1",
-                          RAXIS_SUPERVISOR_KERNEL_BINARY: (bin/"raxis-kernel").to_s
+                          RAXIS_SUPERVISOR_KERNEL_BINARY: (opt_bin/"raxis-kernel").to_s
     log_path var/"log/raxis/kernel.log"
     error_log_path var/"log/raxis/kernel.err.log"
   end
